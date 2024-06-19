@@ -14,7 +14,7 @@ export const SITE_DESCR = 'Официальный дилерский центр'
 // Имя пользователя в Телегам
 export const TELEGRAM = '';
 // Телефон по умолчанию
-export const PHONE = '+7 (999) 000-00-00';
+export const PHONE = '+7 (999) 123-45-67';
 // Бренд
 export const BRAND = 'TANK';
 // Конечное время для таймера
