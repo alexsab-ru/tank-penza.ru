@@ -10,7 +10,7 @@ import icon from "astro-icon";
 export default defineConfig({
 	integrations: [
 		tailwind({
-			configFile: './tailwind.config.js'
+			configFile: './tailwind.tank.js'
 		}),
 		sitemap(),
 		robots({
@@ -26,6 +26,6 @@ export default defineConfig({
 		mdx(),
 		icon(),
 	],
-	site: 'https://site.com',
-	base: "/"
+	site: 'https://alexsab-ru.github.io',
+	base: "/tank-samara.ru/"
 });
