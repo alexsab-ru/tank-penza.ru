@@ -1,2 +1,3 @@
-// @include font("Gilroy", normal, 300, "/fonts/gilroy-light.woff2");
-// @include font("Gilroy", normal, 800, "/fonts/gilroy-extrabold.woff2");
+@include font("TT_TANK", normal, 300, "/fonts/TT_TANK_Light.woff", 'woff');
+@include font("TT_TANK", normal, 500, "/fonts/TT_TANK_Medium.woff", 'woff');
+@include font("TT_TANK", normal, 700, "/fonts/TT_TANK_Bold.woff", 'woff');
