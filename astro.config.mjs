@@ -32,6 +32,6 @@ export default defineConfig({
 	vite: {
 		plugins: [yaml()]
 	},
-	site: 'https://alexsab-ru.github.io',
-	base: "/tank-samara.ru/"
+	site: 'https://tank.alexsab.ru',
+	base: "/"
 });
