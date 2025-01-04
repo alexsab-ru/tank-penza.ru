@@ -1,3 +1,5 @@
-@include font("TT_TANK", normal, 300, "/fonts/TT_TANK_Light.woff", 'woff');
-@include font("TT_TANK", normal, 500, "/fonts/TT_TANK_Medium.woff", 'woff');
-@include font("TT_TANK", normal, 700, "/fonts/TT_TANK_Bold.woff", 'woff');
+@use "mixins";
+
+@include mixins.font("TT_TANK", normal, 300, "/fonts/TT_TANK_Light.woff");
+@include mixins.font("TT_TANK", normal, 500, "/fonts/TT_TANK_Medium.woff");
+@include mixins.font("TT_TANK", normal, 800, "/fonts/TT_TANK_Bold.woff");
