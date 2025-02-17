@@ -1,15 +1,15 @@
 import { phoneFormat } from '@/js/utils/numbers.format';
 import { LAST_DAY, MONTH, YEAR } from '@/js/utils/date';
 // Название сайта по умолчанию
-export const SITE_NAME = 'TANK SAMARA';
+export const SITE_NAME = 'TANK Пенза';
 // Юр лицо
-export const LEGAL_ENTITY = 'ООО «Юридическое название»';
+export const LEGAL_ENTITY = 'ООО «Пенза-Авто»';
 // ИНН
-export const LEGAL_INN = '1234567890';
+export const LEGAL_INN = '5835071226';
 // Город
-export const LEGAL_CITY = 'г. Самара';
+export const LEGAL_CITY = 'г. Пенза';
 // где? в Городе
-export const LEGAL_CITY_WHERE = 'Самаре';
+export const LEGAL_CITY_WHERE = 'Пензе';
 // Описание сайта по умолчанию
 export const SITE_DESCR = 'Официальный дилерский центр';
 // Телефон по умолчанию
@@ -32,8 +32,8 @@ export const LINKS_MENU = [
 	// {url: 'used_cars/', name: 'Авто с пробегом'},
 	{url: 'models/', name: 'Модели'},
 	// {url: 'trade-in/', name: 'Оценка автомобиля'},
-	// {url: 'special-offers/', name: 'Спецпредложения'},
-	{url: 'news/', name: 'Новости'},
+	{url: 'special-offers/', name: 'Спецпредложения'},
+	// {url: 'news/', name: 'Новости'},
 	{url: 'test-drive/', name: 'Запись на тест-драйв'},
 	{url: 'service-request/', name: 'Запись на сервис'},
 	{url: '#services', name: 'Услуги'},
