@@ -13,7 +13,7 @@ export const LEGAL_CITY_WHERE = 'Пензе';
 // Описание сайта по умолчанию
 export const SITE_DESCR = 'Официальный дилерский центр';
 // Телефон по умолчанию
-export const PHONE = '+7 (999) 123-45-67';
+export const PHONE = '+7 (8412) 990-005';
 // Бренд
 export const BRAND = 'TANK';
 // Конечное время для таймера
