@@ -1,0 +1,154 @@
+---
+h1: Стоимость технического обслуживания Tank
+title: Стоимость ТО TANK — рассчитайте стоимость технического обслуживания
+caption: Стоимость технического обслуживания Tank
+breadcrumb: Стоимость технического обслуживания Tank
+pubDate: 2025-04-23
+toDate: false
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/to/thumb.webp
+description: "Рассчитайте стоимость ТО для вашего TANK и запишитесь в официальный сервис: быстро, удобно и с гарантией качества обслуживания"
+---
+
+import Button from '@/components/Button/Button.astro';
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/to/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/to/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="Стоимость технического обслуживания Tank" />
+</picture>
+
+<div class="overflow-x-auto mb-12">
+  <table class="w-full border-collapse">
+  <tbody>
+  <tr>
+  <td class="p-4 bg-gray-100 font-semibold border">Автомобиль</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 1</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 2</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 3</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 4</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 5</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 6</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 7</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 8</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 9</td>
+  <td class="p-4 bg-gray-100 font-semibold border">ТО 10</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-white">TANK 300</td>
+  <td class="p-4 border bg-white">22766</td>
+  <td class="p-4 border bg-white">36733</td>
+  <td class="p-4 border bg-white">55930</td>
+  <td class="p-4 border bg-white">36909</td>
+  <td class="p-4 border bg-white">22702</td>
+  <td class="p-4 border bg-white">96097</td>
+  <td class="p-4 border bg-white">37501</td>
+  <td class="p-4 border bg-white">36733</td>
+  <td class="p-4 border bg-white">55946</td>
+  <td class="p-4 border bg-white">36733</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-gray-50">TANK 400 2.0h AT 4 WD (245 л.с.)</td>
+  <td class="p-4 border bg-gray-50">30060</td>
+  <td class="p-4 border bg-gray-50">32360</td>
+  <td class="p-4 border bg-gray-50">56906</td>
+  <td class="p-4 border bg-gray-50">71607</td>
+  <td class="p-4 border bg-gray-50">40077</td>
+  <td class="p-4 border bg-gray-50">51295</td>
+  <td class="p-4 border bg-gray-50">40770</td>
+  <td class="p-4 border bg-gray-50">71707</td>
+  <td class="p-4 border bg-gray-50">44570</td>
+  <td class="p-4 border bg-gray-50">54345</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-white">TANK 500 3.0 AT 4WD (299 л.с.)</td>
+  <td class="p-4 border bg-white">35422</td>
+  <td class="p-4 border bg-white">41674</td>
+  <td class="p-4 border bg-white">86090</td>
+  <td class="p-4 border bg-white">77601</td>
+  <td class="p-4 border bg-white">35422</td>
+  <td class="p-4 border bg-white">88051</td>
+  <td class="p-4 border bg-white">46359</td>
+  <td class="p-4 border bg-white">77601</td>
+  <td class="p-4 border bg-white">74222</td>
+  <td class="p-4 border bg-white">54969</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-gray-50">TANK 500 2.0hyb AT 4WD (299 л.с.)</td>
+  <td class="p-4 border bg-gray-50">26375</td>
+  <td class="p-4 border bg-gray-50">27335</td>
+  <td class="p-4 border bg-gray-50">58752</td>
+  <td class="p-4 border bg-gray-50">70922</td>
+  <td class="p-4 border bg-gray-50">26375</td>
+  <td class="p-4 border bg-gray-50">59387</td>
+  <td class="p-4 border bg-gray-50">27335</td>
+  <td class="p-4 border bg-gray-50">70922</td>
+  <td class="p-4 border bg-gray-50">47663</td>
+  <td class="p-4 border bg-gray-50">42564</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-white">TANK 500 3.0h AT 4WD (354 л.с.)</td>
+  <td class="p-4 border bg-white">37602</td>
+  <td class="p-4 border bg-white">43854</td>
+  <td class="p-4 border bg-white">91371</td>
+  <td class="p-4 border bg-white">79435</td>
+  <td class="p-4 border bg-white">37602</td>
+  <td class="p-4 border bg-white">89534</td>
+  <td class="p-4 border bg-white">48539</td>
+  <td class="p-4 border bg-white">79435</td>
+  <td class="p-4 border bg-white">75300</td>
+  <td class="p-4 border bg-white">60886</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-gray-50">TANK 700 3.0 AT 4WD (354 л.с.)</td>
+  <td class="p-4 border bg-gray-50">37602</td>
+  <td class="p-4 border bg-gray-50">43854</td>
+  <td class="p-4 border bg-gray-50">91371</td>
+  <td class="p-4 border bg-gray-50">79435</td>
+  <td class="p-4 border bg-gray-50">37602</td>
+  <td class="p-4 border bg-gray-50">89534</td>
+  <td class="p-4 border bg-gray-50">48539</td>
+  <td class="p-4 border bg-gray-50">79435</td>
+  <td class="p-4 border bg-gray-50">75300</td>
+  <td class="p-4 border bg-gray-50">60886</td>
+  </tr>
+  <tr>
+  <td class="p-4 border bg-white">TANK 700 3.0h AT 4WD (422 л.с.)</td>
+  <td class="p-4 border bg-white">37602</td>
+  <td class="p-4 border bg-white">43854</td>
+  <td class="p-4 border bg-white">92717</td>
+  <td class="p-4 border bg-white">80011</td>
+  <td class="p-4 border bg-white">37602</td>
+  <td class="p-4 border bg-white">96233</td>
+  <td class="p-4 border bg-white">40434</td>
+  <td class="p-4 border bg-white">80011</td>
+  <td class="p-4 border bg-white">76646</td>
+  <td class="p-4 border bg-white">60886</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+
+## Запишитесь на сервис
+
+<p class="text-center">Оставь заявку, и в ближайшее время представитель официального дилерского центра позвонит, чтобы уточнить время и объем необходимых работ, а также ответит на все вопросы.</p>
+
+<div class="text-center mt-12">
+  <Button 
+    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
+    url="#common-modal" 
+    title="Записаться на сервис"
+    dataTitle="Записаться на сервис"
+    dataFormName="Записаться на сервис"
+  />
+</div>
+
+{/* Ссылки ниже не открываются */}
+{/* ## Регламент технического обслуживания
+
+<p><a target="_blank" href="https://tank.ru/download/document/service_schedule_tank_300.pdf">График планового технического обслуживания TANK 300</a></p>
+<p><a target="_blank" href="https://tank.ru/download/document/reglament_t400">График планового технического обслуживания TANK 400</a></p>
+<p><a target="_blank" href="https://tank.ru/download/document/service_schedule_tank_500.pdf">График планового технического обслуживания TANK 500 (Adventure + Premium)</a></p>
+<p><a target="_blank" href="https://tank.ru/download/document/service_schedule_tank_500.pdf">График планового технического обслуживания TANK 500 Urban</a></p>
+<p><a target="_blank" href="https://tank.ru/download/document/reglament_t700_sup_prem">График планового технического обслуживания TANK 700 (SUPERIOR + PREMIUM)</a></p>
+<p><a target="_blank" href="https://tank.ru/download/document/reglament_t700_Edition_One">График планового технического обслуживания TANK 700 (Edition One)</a></p> */}
