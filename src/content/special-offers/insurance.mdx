@@ -1,0 +1,103 @@
+---
+h1: TANK Insurance
+title: Страхование TANK Insurance — программа для клиентов бренда
+caption: TANK Insurance
+breadcrumb: TANK Insurance
+pubDate: 2025-04-23
+toDate: true
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/insurance/thumb.webp
+description: "Защитите свой TANK с помощью TANK Insurance: выгодные тарифы, ремонт у официальных дилеров и круглосуточная поддержка от ведущих страховых компаний России."
+---
+
+import Button from '@/components/Button/Button.astro';
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import {Icon} from 'astro-icon/components';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
+import CardMedia from '@/components/CardMedia/CardMedia.astro'
+
+Программа страхования, разработанная совместно с ведущими страховыми компаниями России специально для владельцев автомобилей TANK.
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/insurance/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/insurance/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="TANK Insurance" />
+</picture>
+
+<div class="text-center mb-20">
+  <Button 
+    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
+    url="#common-modal" 
+    title="Оставить заявку"
+    dataTitle="Оставить заявку"
+    dataFormName="TANK Insurance"
+  />
+</div>
+
+## Преимущества TANK Insurance
+
+<div class="mb-20">
+  <CardMedia imgPlacement="right">
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/insurance/2.webp" alt="Преимущества TANK Insurance" />
+    <Fragment slot="card-content">
+      <ul class="list-disc">
+        <li class="!mb-8">
+          <h3 class="!text-xl !mb-6">Выгодно</h3>
+          <p class="font-light">Тариф разработан с учетом характеристик автомобилей TANK для обеспечения надежной защиты на дороге.</p>
+          </li>
+        <li class="!mb-8">
+          <h3 class="!text-xl !mb-6">Качественно</h3>
+          <p class="font-light">Ремонт только у официального дилера TANK с использованием оригинальных запчастей.</p>
+        </li>
+        <li class="!mb-8">
+          <h3 class="!text-xl !mb-6">Удобно</h3>
+          <p class="font-light">Выделенная горячая линия для клиентов TANK Insurance.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+## Условия программы TANK Insurance
+
+<div class="mb-20">
+  <CardMedia>
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/insurance/3.webp" alt="Условия программы TANK Insurance" />
+    <Fragment slot="card-content">
+      <ul class="list-disc">
+        <li>Полное страховое покрытие по рискам «Хищение/Угон» и «Полная конструктивная гибель»</li>
+        <li>Полное страховое покрытие по рискам «Ущерб» (без ограничений)</li>
+        <li>Возможность рассрочки платежей</li>
+        <li>Неагрегатная страховая сумма</li>
+        <li>Без ограничения по количеству обращений</li>
+        <li>Эвакуация с места ДТП</li>
+        <li>Возможность удаленного урегулирования убытков</li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+## Партнеры программы
+
+<div class="my-20 flex flex-col gap-4 md:flex-row md:justify-center">
+  <div class="p-4 bg-gray-100 rounded-2xl flex items-center">
+    <img src="https://cdn.alexsab.ru/logo/insurance/vsk.svg" class="!max-w-[200px]" alt="ВСК" />
+  </div>
+  <div class="p-4 bg-gray-100 rounded-2xl flex items-center">
+    <img src="https://cdn.alexsab.ru/logo/insurance/ast.svg" class="!max-w-[200px]" alt="АСТ" />
+  </div>
+  <div class="p-4 bg-gray-100 rounded-2xl flex items-center">
+    <img src="https://cdn.alexsab.ru/logo/insurance/alfastrah.svg" class="!max-w-[200px]" alt="Альфа страхование" />
+  </div>
+</div>
+
+<div class="text-center mb-20">
+  <FeedbackForm dataFormName="TANK Insurance" title="Оставьте заявку" />
+</div>
+
+<div class="font-light text-gray-500">
+  \* ТЭНК Иншюранс
+  
+  **Программа распространяется на все модели автомобилей TANK во всех доступных комплектациях. Подробнее об условиях программы уточняйте по телефонам официальных дилерских центров или по телефону поддержки клиентов TANK. Предложение действительно на 01.03.2025 г.
+</div>
+
+
