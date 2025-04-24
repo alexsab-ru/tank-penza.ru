@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import argparse
 from utils import *
@@ -83,13 +84,16 @@ class CarProcessor:
             tradein_discount = int(car.find('tradeinDiscount').text or 0)
             return credit_discount + tradein_discount
         else:
-            if(car.find('max_discount')):
-                return int(car.find('max_discount').text or 0)
+            max_discount_elem = car.find('max_discount')
+            if max_discount_elem is not None and max_discount_elem.text:
+                print("max_discount: " + max_discount_elem.text)
+                return int(max_discount_elem.text)
             else:
+                print("Элемент max_discount отсутствует или пустой")
                 return 0
 
     def process_car(self, car: ET.Element, existing_files: set, current_thumbs: List[str], 
-                   prices_data: Dict, config: Dict) -> None:
+                   prices_data: Dict, sort_storage_data: Dict, config: Dict) -> None:
         """Обработка отдельного автомобиля"""
         # Базовые расчёты цены и скидки
         price = int(car.find('price').text or 0)
@@ -116,7 +120,7 @@ class CarProcessor:
         )
         print(f"Уникальный идентификатор: {friendly_url}")
         
-        url = f"https://{config['repo_name']}{config['path_car_page']}{friendly_url}/"
+        url = f"https://{config['domain']}{config['path_car_page']}{friendly_url}/"
         create_child_element(car, 'url', url)
         if self.source_type in ['carcopy', 'vehicles_vehicle']:
             update_element_text(car, 'url_link', url)
@@ -128,10 +132,10 @@ class CarProcessor:
         update_car_prices(car, prices_data)
 
         if os.path.exists(file_path):
-            update_yaml(car, file_path, friendly_url, current_thumbs, config)
+            update_yaml(car, file_path, friendly_url, current_thumbs, sort_storage_data, config)
         else:
             create_file(car, file_path, friendly_url, current_thumbs,
-                       existing_files, config)
+                       existing_files, sort_storage_data, config)
 
     def rename_elements(self, car: ET.Element) -> None:
         """Переименование элементов согласно карте переименований"""
@@ -153,7 +157,7 @@ def main():
     parser.add_argument('--cars_dir', default='src/content/cars', help='Default cars directory')
     parser.add_argument('--input_file', default='cars.xml', help='Input file')
     parser.add_argument('--output_path', default='./public/cars.xml', help='Output path/file')
-    parser.add_argument('--repo_name', default=os.getenv('REPO_NAME', 'localhost'), help='Repository name')
+    parser.add_argument('--domain', default=os.getenv('DOMAIN', 'localhost'), help='Repository name')
     parser.add_argument('--xml_url', default=os.getenv('XML_URL'), help='XML URL')
     parser.add_argument('--skip_thumbs', action="store_true", help='Skip create thumbnails')
     parser.add_argument('--image_tag', default='image', help='Image tag name')
@@ -208,7 +212,18 @@ def main():
     config['move_vin_id_up'] = source_config['move_vin_id_up']
     config['new_address'] = source_config['new_address']
     config['new_phone'] = source_config['new_phone']
-    
+
+    # Загружаем данные из JSON файла
+    sort_storage_data = {}
+    if os.path.exists('sort_storage.json'):
+        try:
+            with open('sort_storage.json', 'r', encoding='utf-8') as f:
+                sort_storage_data = json.load(f)
+        except json.JSONDecodeError:
+            print("Ошибка при чтении sort_storage.json")
+        except Exception as e:
+            print(f"Произошла ошибка при работе с файлом: {e}")
+
     # Инициализация процессора для конкретного источника
     processor = CarProcessor(args.source_type)
     
@@ -239,7 +254,7 @@ def main():
             cars_to_remove.append(car)
             continue
         
-        processor.process_car(car, existing_files, current_thumbs, prices_data, config)
+        processor.process_car(car, existing_files, current_thumbs, prices_data, sort_storage_data, config)
     
     # Удаление ненужных машин
     for car in cars_to_remove:
