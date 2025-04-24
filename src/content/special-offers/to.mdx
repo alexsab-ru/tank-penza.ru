@@ -9,7 +9,7 @@ image: https://cdn.alexsab.ru/b/tank/img/special-offers/to/thumb.webp
 description: "Рассчитайте стоимость ТО для вашего TANK и запишитесь в официальный сервис: быстро, удобно и с гарантией качества обслуживания"
 ---
 
-import Button from '@/components/Button/Button.astro';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
 import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
 import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
 
@@ -18,7 +18,7 @@ import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL,
 	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/to/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="Стоимость технического обслуживания Tank" />
 </picture>
 
-<div class="overflow-x-auto mb-12 my-14 md:my-0">
+<div class="overflow-x-auto !mb-12 my-14 md:my-0">
   <table class="w-full border-collapse">
   <tbody>
   <tr>
@@ -134,13 +134,7 @@ import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL,
 <p class="text-center">Оставь заявку, и в ближайшее время представитель официального дилерского центра позвонит, чтобы уточнить время и объем необходимых работ, а также ответит на все вопросы.</p>
 
 <div class="text-center mt-12">
-  <Button 
-    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
-    url="#common-modal" 
-    title="Записаться на сервис"
-    dataTitle="Записаться на сервис"
-    dataFormName="Записаться на сервис"
-  />
+  <FeedbackForm dataFormName="Записаться на сервис" title="Записаться на сервис" />
 </div>
 
 {/* Ссылки ниже не открываются */}
