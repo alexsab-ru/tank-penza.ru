@@ -1,0 +1,299 @@
+---
+h1: TANK Secure Online
+title: TANK Secure Online — программа страхования для онлайн-покупателей автомобилей
+caption: TANK Secure Online
+breadcrumb: TANK Secure Online
+pubDate: 2025-04-23
+toDate: true
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/thumb.webp
+description: "TANK Secure Online — уникальная программа страхования для тех, кто приобретает автомобили онлайн! Оформите полный пакет страховых услуг прямо на нашем сайте."
+---
+
+import Button from '@/components/Button/Button.astro';
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER, PHONE } from '@/const';
+import { phoneFormat } from '@/js/utils/numbers.format';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import {Icon} from 'astro-icon/components';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
+import CardMedia from '@/components/CardMedia/CardMedia.astro'
+
+Программа страхования КАСКО для онлайн-покупателей новых автомобилей бренда TANK
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="TANK Secure Online" />
+</picture>
+
+## Условия программы TANK Secure Online
+
+<div x-data="{
+  tabs: [
+    {id: 'tabOne', name: 'С франшизой'},
+    {id: 'tabTwo', name: 'Без франшизы'},
+  ], 
+  tabActive: 'tabOne',
+}">
+  <div class="grid grid-cols-2 gap-4 mb-8 text-center">
+    <template x-for="tab in tabs">
+      <div 
+        class="cursor-pointer transition-bg duration-300 rounded-xl"
+        x-bind:class="{'bg-gray-100': tabActive === tab.id}"
+        x-on:click="tabActive = tab.id"
+      >
+        <h4 x-text="tab.name" class="p-4"></h4>
+      </div>
+    </template>
+  </div>
+
+  <div x-show="tabActive === 'tabOne'" class="grid grid-cols-1 gap-4 md:grid-cols-4">
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-300.webp" alt="TANK 300" /></p>
+      <h3>TANK 300</h3>
+      <table>
+        <tbody>
+          <tr class="bg-gray-100">
+            <td>Возраст/лет</td>
+            <td>Стаж/лет</td>
+            <td>% от стоимости автомобиля</td>
+          </tr>
+          <tr>
+            <td>от 25</td>
+            <td>от 5</td>
+            <td>2,20%</td>
+          </tr>
+          <tr>
+            <td>от 30</td>
+            <td>от 10</td>
+            <td>1,90%</td>
+          </tr>
+          <tr>
+            <td>от 35</td>
+            <td>от 15</td>
+            <td>1,70%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mt-4">Франшиза 30 000 ₽</p>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-400.webp" alt="TANK 400" /></p>
+      <h3>TANK 400</h3>
+      <table>
+        <tbody>
+        <tr class="bg-gray-100">
+        <td>Возраст/лет</td>
+        <td>Стаж/лет</td>
+        <td>% от стоимости автомобиля</td>
+        </tr>
+        <tr>
+        <td>от 25</td>
+        <td>от 5</td>
+        <td>1,9%</td>
+        </tr>
+        <tr>
+        <td>от 30</td>
+        <td>от 10</td>
+        <td>1,6%</td>
+        </tr>
+        <tr>
+        <td>от 35</td>
+        <td>от 15</td>
+        <td>1,5%</td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="mt-4">Франшиза 30 000 ₽</p>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-500.webp" alt="TANK 500" /></p>
+      <h3>TANK 500</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>1,90%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>1,60%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>1,50%</td>
+      </tr>
+      </tbody>
+      </table>
+      <p class="mt-4">Франшиза 30 000 ₽</p>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-700.webp" alt="TANK 700" /></p>
+      <h3>TANK 700</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>2,20%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>1,80%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>1,70%</td>
+      </tr>
+      </tbody>
+      </table>
+      <p class="mt-4">Франшиза 30 000 ₽</p>
+    </div>
+  </div>
+
+  <div x-show="tabActive === 'tabTwo'" class="grid grid-cols-1 gap-4 md:grid-cols-4">
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-300.webp" alt="TANK 300" /></p>
+      <h3>TANK 300</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>2,70%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>2,30%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>2,10%</td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-400.webp" alt="TANK 400" /></p>
+      <h3>TANK 400</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>2,20%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>1,80%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>1,70%</td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-500.webp" alt="TANK 500" /></p>
+      <h3>TANK 500</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>2,20%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>1,80%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>1,70%</td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+    <div>
+      <p><img src="https://cdn.alexsab.ru/b/tank/img/special-offers/secure-online/tank-700.webp" alt="TANK 700" /></p>
+      <h3>TANK 700</h3>
+      <table>
+      <tbody>
+      <tr class="bg-gray-100">
+      <td>Возраст/лет</td>
+      <td>Стаж/лет</td>
+      <td>% от стоимости автомобиля</td>
+      </tr>
+      <tr>
+      <td>от 25</td>
+      <td>от 5</td>
+      <td>2,20%</td>
+      </tr>
+      <tr>
+      <td>от 30</td>
+      <td>от 10</td>
+      <td>1,80%</td>
+      </tr>
+      <tr>
+      <td>от 35</td>
+      <td>от 15</td>
+      <td>1,70%</td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="text-center my-8 md:my-20">
+  <Button 
+    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
+    url="#common-modal" 
+    title="Запросить предложение"
+    dataTitle="Запросить предложение"
+    dataFormName="TANK Secure Online"
+  />
+</div>
+
+<div class="text-gray-500 mt-12 font-light">
+  \* ТЭНК Секьюер онлайн
+
+  Предложение действует при покупке нового автомобиля бренда TANK моделей TANK 300, TANK 400, TANK 500 и TANK 700, у ООО «ТЭНК МОТОР ТРЕЙД РУС» (ИНН 9728087892), онлайн в мобильном приложении GWM Store. Тариф представлен в процентах от стоимости автомобиля. Покрывает риски «Угон», «Ущерб», «Тотальная гибель». Страховые услуги оказывает партнер: СК «АльфаСтрахование» ОГРН 1027739431730, адрес: 115162, г. Москва, ул. Шаболовка, д.31, стр.6, лицензия СИ №2239 от 13.11.2017г. Условия предложения и тарифы могут быть изменены партнером СК «АльфаСтрахование» в одностороннем порядке. Предложение ограничено, носит информационный характер, не является публичной офертой. Заключение договора страхования (полиса) КАСКО, не является обязательным условием приобретения автомобиля.Подробные условия специального предложения, правила страхования, условия приобретения КАСКО и иные условия уточняйте по телефону горячей линии <a class="whitespace-nowrap" href={`tel:${phoneFormat(PHONE)}`}>{PHONE}</a>
+</div>
+
+
