@@ -1,0 +1,38 @@
+---
+h1: Кредит со ставкой от 0,01%
+title: Кредит со ставкой от 0,01%
+caption: Кредит со ставкой от 0,01%
+breadcrumb: Кредит со ставкой от 0,01%
+pubDate: 2025-04-23
+toDate: true
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/credit-online/thumb.webp
+description: "Кредит со ставкой от 0,01%"
+---
+
+import Button from '@/components/Button/Button.astro';
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import {Icon} from 'astro-icon/components';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
+import CardMedia from '@/components/CardMedia/CardMedia.astro'
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/credit-online/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/credit-online/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="Кредит со ставкой от 0,01%" />
+</picture>
+
+Оценивайте свои финансовые возможности и риски.<br />
+Полная стоимость кредита от 0,005% до 22,411%<br />
+Выгодные условия при покупке онлайн с минимальной кредитной ставкой от 0,01%
+
+<div class="text-center mt-20">
+  <Button 
+    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
+    url="#common-modal" 
+    title="Оформить заявку"
+    dataTitle="Оформить заявку"
+    dataFormName="Кредит со ставкой от 0,01%"
+  />
+</div>
+
+
