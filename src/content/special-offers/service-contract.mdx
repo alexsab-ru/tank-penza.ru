@@ -1,0 +1,564 @@
+---
+h1: Сервисный контракт TANK
+title: Сервисный контракт для автомобилей TANK
+caption: Сервисный контракт TANK
+breadcrumb: Сервисный контракт TANK
+pubDate: 2025-04-23
+toDate: 2025-12-31
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/thumb.webp
+description: Оформите сервисный контракт от TANK и получайте 5 лет технического обслуживания вашего автомобиля без забот! Услуга доступна при покупке нового авто и до первого ТО. Все обязательные операции по регламенту пробега, включая работы, запчасти и расходные материалы, уже включены.
+---
+
+import Button from '@/components/Button/Button.astro';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
+import CardMedia from '@/components/CardMedia/CardMedia.astro'
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import Faq from '@/components/Faq/Index.astro';
+
+export const faqData = [
+    {
+		"id": 1,
+		"question": "Что такое Сервисный контракт TANK?",
+		"answer": "<p>Сервисный контракт TANK – это пакет услуг по фиксированной цене, включающий в себя 3 или 5 очередных регламентных ТО (ТО 10 000 км, ТО 25 000 км, ТО 40 000 км / ТО 10000 км, ТО 25000 км, ТО 40 000 км, 55 000 км, 70 000 км).</p>",
+		"open": false
+	},
+    {
+		"id": 2,
+		"question": "Что покрывается программой?",
+		"answer": "<p>Сервисный контракт покрывает все обязательные базовые операции в рамках ТО, согласно регламенту по пробегу, включает работы, необходимые запасные части и расходные материалы.</p>",
+		"open": false
+	},
+    {
+		"id": 3,
+		"question": "На какие автомобили можно приобрести программу?",
+		"answer": "<p>В программе участвуют автомобили TANK 300, TANK 400, TANK 500 и TANK 700 во всех комплектациях, ввезённые на территорию Российской Федерации официальным дистрибьютером ООО «Хавейл Мотор Рус».</p>",
+		"open": false
+	},
+    {
+		"id": 4,
+		"question": "Кто может приобрести Сервисный контракт TANK?",
+		"answer": "<p>Приобрести контракт могут как физические, так и юридические лица.</p>",
+		"open": false
+	},
+    {
+		"id": 5,
+		"question": "Сколько действует Сервисный контракт?",
+		"answer": "<p>Сервисный контракт действует 36 либо 60 месяцев с даты заключения договора (в зависимости от выбранного контракта 3/5 ТО).</p>",
+		"open": false
+	},
+    {
+		"id": 6,
+		"question": "Зачем нужен Сервисный контракт TANK?",
+		"answer": "<p>Благодаря Сервисному контракту владение автомобилем TANK становится выгодным и еще более комфортным, так как программа позволяет зафиксировать расходы на базовое техническое обслуживание в течение трех/пяти лет (в зависимости от выбранного контракта 3/5 ТО).</p>",
+		"open": false
+	},
+    {
+		"id": 7,
+		"question": "В какой момент можно приобрести программу?",
+		"answer": "<p>Услуга доступна у официальных Дилеров TANK при покупке нового автомобиля и до прохождения первого ТО (12 месяцев или 10 000 км пробега с момента покупки нового автомобиля).</p>",
+		"open": false
+	},
+    {
+		"id": 8,
+		"question": "Где можно приобрести программу?",
+		"answer": "<p>Сервисный контракт TANK можно приобрести у любого официального Дилера TANK.</p>",
+		"open": false
+	},
+    {
+		"id": 9,
+		"question": "Где можно провести ТО в рамках программы?",
+		"answer": "<p>Обслуживание Вашего автомобиля возможно провести у Дилера TANK, в котором был заключен Сервисный контракт, либо у другого Дилера TANK.</p>",
+		"open": false
+	},
+    {
+		"id": 10,
+		"question": "Возможно ли в рамках программы провести дополнительные работы?",
+		"answer": "<p>Дополнительные работы, которые не входят в Программу, оплачиваются отдельно по ценам, установленным Дилером.</p>",
+		"open": false
+	},
+    {
+		"id": 11,
+		"question": "Сколько стоит Сервисный контракт на мой автомобиль?",
+		"answer": "<p>Подробную информацию об условиях действия предложения, включая точную стоимость сервисного контракта для Вашего автомобиля, Вы можете уточнить в официальных дилерских центрах TANK.</p>",
+		"open": false
+	}
+];
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="Сервисный контракт TANK" />
+</picture>
+
+## Сервисный контракт TANK
+
+Специально для своих клиентов TANK разработал программу Сервисный контракт. Вы можете приобрести Сервисный контракт, включающий 3 года или 5 лет   технического обслуживания (ТО) автомобиля. Услуга доступна при покупке нового автомобиля и до прохождения первого ТО. Она покрывает все обязательные базовые операции в рамках ТО согласно регламенту по пробегу, включает работы, необходимые запасные части и расходные материалы.
+
+<div class="my-20">
+  <CardMedia>
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/2.webp" alt="Как приобрести и воспользоваться Сервисным контрактом" />
+    <Fragment slot="card-content">
+      <h2 class="!m-0 !p-0 before:hidden !text-2xl lg:!text-4xl">Как приобрести и воспользоваться Сервисным контрактом</h2>
+      <ul class="list-disc">
+        <li>Сервисный контракт на 3 ТО либо на 5 ТО Вы можете приобрести у официального дилера TANK.</li>
+        <li>Обслуживание Вашего автомобиля возможно провести в Дилерском центре TANK, в котором был заключен Сервисный контракт или у другого Дилера TANK.</li>
+        <li>Сервисным контрактом можно воспользоваться в любое удобное для Вас время согласно регламенту завода-изготовителя.</li>
+        <li>Подробную информацию об условиях действия предложения, включая точную стоимость Сервисного контракта для Вашего TANK, Вы можете уточнить в официальных дилерских центрах TANK.</li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+## Услуги по программе
+
+<div x-data="{
+  models: [
+    {id: 'tank-300', name: 'TANK 300'},
+    {id: 'tank-400', name: 'TANK 400'},
+    {id: 'tank-500-30', name: 'TANK 500 3.0'},
+    {id: 'tank-500-20-hybrid', name: 'TANK 500 2.0 Hybrid'},
+    {id: 'tank-700', name: 'TANK 700'},
+  ], 
+  tabActive: 'tank-300',
+  checkIcon: `<svg width='27' height='26' style='display: inline-block' viewBox='0 0 27 26' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M8.55 13L12.05 16.5L19.05 9.50001M25.4667 13C25.4667 19.4433 20.2433 24.6667 13.8 24.6667C7.35668 24.6667 2.13333 19.4433 2.13333 13C2.13333 6.55669 7.35668 1.33334 13.8 1.33334C20.2433 1.33334 25.4667 6.55669 25.4667 13Z' stroke='#FF9549' stroke-width='2.33333' stroke-linecap='round' stroke-linejoin='round'></path></svg>`
+}">
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8 text-center">
+    <template x-for="model in models">
+      <div 
+        class="cursor-pointer transition-opacity duration-300 rounded-xl"
+        x-bind:class="{'bg-gray-100': tabActive === model.id}"
+        x-on:click="tabActive = model.id"
+      >
+        <img x-bind:src="`https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/${model.id}.webp`" x-bind:alt="`${model.name}`" class="inline-block" />
+        <h4 x-text="model.name" class="pb-4"></h4>
+      </div>
+    </template>
+  </div>
+
+  <div class="table_wrapper overflow-x-auto my-14 md:my-0">
+    <table>
+      <thead>
+        <tr>
+          <th>Техническое обслуживание (ТО)</th>
+          <th class="text-center">ТО 1</th>
+          <th class="text-center">ТО 2</th>
+          <th class="text-center">ТО 3</th>
+          <th class="text-center">ТО 4</th>
+          <th class="text-center">ТО 5</th>
+        </tr>
+        <tr>
+          <th>Пробег, км</th>
+          <th class="text-center">10 000</th>
+          <th class="text-center">25 000</th>
+          <th class="text-center">40 000</th>
+          <th class="text-center">55 000</th>
+          <th class="text-center">70 000</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="50%" class="text-left">Масло ДВС и масляный фильтр замена</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Масло АКПП замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="['tank-300'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">-</td>
+        </tr>
+        <tr>
+          <td class="text-left">Масло в редукторах замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+          </td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+        </tr>
+        <tr>
+          <td class="text-left">Масло в раздаточной коробке замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-500-20-hybrid'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-500-20-hybrid'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">-</td>
+        </tr>
+        <tr>
+          <td class="text-left">Тормозная жидкость замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+          </td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+        </tr>
+        <tr>
+          <td class="text-left">Охлаждающая жидкость замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-500-30', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-500-30', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-500-20-hybrid'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-500-20-hybrid'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Свечи зажигания замена</td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+          </td>
+          <td class="text-center">-</td>
+          <td class="text-center">-</td>
+        </tr>
+        <tr>
+          <td class="text-left">Топливный фильтр замена</td>
+          <td class="text-center">
+            <template x-if="['tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!'tank-400'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Воздушный фильтр ДВС замена</td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Воздушный фильтр системы кондиционирования замена</td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Проверка давления, износа шин и перестановка колес</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-left">Комплекс проверочных работ, включающих контроль, диагностику, очистку всех жизненно важных систем, узлов и агрегатов автомобиля в соответствии с руководством</td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+          <td class="text-center">
+            <template x-if="['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span x-html="checkIcon"></span>
+            </template>
+            <template x-if="!['tank-300', 'tank-400', 'tank-500-30', 'tank-500-20-hybrid', 'tank-700'].includes(tabActive)">
+              <span>-</span>
+            </template>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+</div>
+
+<div class="my-20">
+  <CardMedia>
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/3.webp" alt="Фиксированная стоимость обслуживания вне зависимости от внешних факторов" />
+    <Fragment slot="card-content">
+      <div>
+        <h2 class="!m-0 !p-0 before:hidden !text-2xl lg:!text-4xl">Фиксированная стоимость обслуживания вне зависимости от внешних факторов</h2>
+        <p class="font-light">(курсовые колебания, изменение рыночных условий и повышение цен)</p>
+      </div>
+      <ul class="list-disc">
+        <li>Возможность просчитать свои затраты на поддержание автопарка в оптимальном состоянии</li>
+        <li>Отсутствие необходимости планировать в своем бюджете расходы на очередное ТО</li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+<div class="mb-20">
+  <CardMedia imgPlacement="right">
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/4.webp" alt="Своевременное качественное ТО Вашего автомобиля в соответствии со стандартами" />
+    <Fragment slot="card-content">
+      <h2 class="!m-0 !p-0 before:hidden !text-2xl lg:!text-4xl">Своевременное качественное ТО Вашего автомобиля в соответствии со стандартами</h2>
+      <ul class="list-disc">
+        <li>Операции выполняются квалифицированным персоналом, прошедшим обучение у дистрибьютора, с использованием специального инструмента и диагностического оборудования</li>
+        <li>Использование только оригинальных запасных частей и омологированных масел</li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+<div class="mb-20">
+  <CardMedia>
+    <img slot="card-image" class="max-w-48" src="https://cdn.alexsab.ru/b/tank/img/special-offers/service-contract/5.webp" alt="Дополнительное преимущество при перепродаже Вашего автомобиля" />
+    <Fragment slot="card-content">
+      <h2 class="!m-0 !p-0 before:hidden !text-2xl lg:!text-4xl">Дополнительное преимущество при перепродаже Вашего автомобиля</h2>
+      <ul class="list-disc">
+        <li>Ваш автомобиль остается в отличном состоянии благодаря своевременному и регулярному ТО у официальных дилеров</li>
+      </ul>
+    </Fragment>
+  </CardMedia>
+</div>
+
+<div class="mb-20"><Faq items={faqData} title="Часто задаваемые вопросы" class="bg-gray-50 rounded-2xl" /></div>
+
+<div class="text-center mt-12">
+  <FeedbackForm dataFormName="Сервисный контракт" title="Оставьте заявку" />
+</div>

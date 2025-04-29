@@ -1,0 +1,38 @@
+---
+h1: Длительный тест-драйв TANK
+title: Тест-драйв TANK
+caption: Длительный тест-драйв TANK
+breadcrumb: Длительный тест-драйв TANK
+pubDate: 2025-04-23
+toDate: 2025-12-31
+image: https://cdn.alexsab.ru/b/tank/img/special-offers/test-drive/thumb.webp
+description: Длительный тест-драйв TANK с индивидуальным подходом
+---
+
+import Button from '@/components/Button/Button.astro';
+import { LEGAL_CITY_WHERE, LEGAL_ENTITY, TIMER } from '@/const';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import {Icon} from 'astro-icon/components';
+
+<picture>
+	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/tank/img/special-offers/test-drive/1.webp" />
+	<img src="https://cdn.alexsab.ru/b/tank/img/special-offers/test-drive/thumb.webp" class="mb-10 lg:mb-20 w-full" alt="Длительный тест-драйв TANK" />
+</picture>
+
+<div class="!mb-12 flex flex-col gap-4 md:grid md:grid-cols-3">
+  <div class="p-4 bg-gray-100 rounded text-center text-xl"><Icon name="mdi:clock-time-eight-outline" class="inline-block text-accent-500" /> От 24 часов</div>
+  <div class="p-4 bg-gray-100 rounded text-center text-xl"><Icon name="mdi:seal" class="inline-block text-accent-500" /> Премиальные комплектации</div>
+  <div class="p-4 bg-gray-100 rounded text-center text-xl"><Icon name="mdi:highway" class="inline-block text-accent-500" /> До 200 км</div>
+</div>
+
+<p class="text-center">Длительный тест-драйв TANK с индивидуальным подходом - это ваш персональный тест-драйв автомобиля TANK 300, TANK 400, TANK 500 и TANK 700 от 1 до 3 дней. Выбранный автомобиль будет доставлен по желаемому адресу.</p>
+
+<div class="text-center mt-12">
+  <Button 
+    classes="popup-link inline-block !px-4 xl:!px-8 !py-2 xl:!py-3 !text-white !no-underline" 
+    url="#common-modal" 
+    title="Записаться на тест-драйв"
+    dataTitle="Длительный тест-драйв TANK"
+    dataFormName="Длительный тест-драйв TANK"
+  />
+</div>
